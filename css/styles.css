@@ -1,35 +1,36 @@
-/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
-    font-family: 'Press Start 2P', monospace;
-    overflow: hidden;
-  }
-  
-  h1 {
-    font-family: 'Press Start 2P', monospace;
-  }
-  
-  .font-title {
-    font-family: 'Press Start 2P', monospace;
-  }
-  
-  .shadow-button {
-    box-shadow: 0 0 15px #ffd84d, 0 0 30px #ff4c4c inset;
-  }
-  
-  .bg-balatro {
-    background: transparent;
-  }
-  
-  /* Para que el canvas esté detrás de todo */
-  canvas#shader-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100vw;
-    height: 100vh;
-    display: block;
-    /*background: black;*/
-  }
-  
+  font-family: 'Press Start 2P', monospace;
+  overflow: hidden;
+}
+
+.font-pixel, .text-pixel {
+  font-family: 'Press Start 2P', monospace;
+}
+
+canvas#shader-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
+
+/* Estilo botón Balatro */
+.boton-balatro {
+  background: #ffd84d;
+  border: 4px solid black;
+  box-shadow: 0 4px 0 #000, 0 6px 8px rgba(0,0,0,0.6);
+  transition: all 0.1s ease-in-out;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.boton-balatro:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #000, 0 10px 12px rgba(0,0,0,0.7);
+  background: #fff276;
+}

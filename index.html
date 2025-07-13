@@ -8,30 +8,34 @@
   <title>Noche de Póker 🃏</title>
 </head>
 <body class="min-h-screen bg-balatro text-white flex items-center justify-center p-4">
-  <main class="z-10 relative max-w-2xl w-full bg-black bg-opacity-60 rounded-2xl shadow-2xl p-10 space-y-8 border border-yellow-400">
-    <h1 class="text-5xl text-yellow-400 text-center font-title font-pixel">Noche de Póker 🃏</h1>
-    <p class="text-center text-gray-200 text-lg">📅 Viernes 19 de Julio - 8:00 PM</p>
-    <p class="text-center text-gray-300 text-base">📍 Dirección secreta (Casa de Leo)</p>
-    <p class="text-center text-green-400 text-base">💸 Buy-in: $10</p>
-
+  <main class="z-10 relative w-full max-w-xl bg-black bg-opacity-50 backdrop-blur-md rounded-xl p-6 md:p-10 space-y-6 border-4 border-yellow-400">
+    <h1 class="text-3xl md:text-4xl lg:text-5xl text-yellow-300 text-center font-pixel uppercase">🎲 Noche de Póker</h1>
+  
+    <section class="space-y-2">
+      <p class="text-pixel text-pink-200 text-center">📅 Viernes 19 de Julio - 8:00 PM</p>
+      <p class="text-pixel text-blue-200 text-center">📍 Dirección secreta (Casa de Leo)</p>
+      <p class="text-pixel text-green-300 text-center">💸 Buy-in: $10</p>
+      <p class="text-pixel text-center text-white">🔥 Premios, snacks, traete tu mejor cara de póker. No se permite llorar si pierdes.</p>
+    </section>
+  
     <form id="formulario" class="space-y-4">
       <div>
-        <label for="nombre" class="block text-sm mb-1">Nombre</label>
+        <label for="nombre" class="block text-pixel text-sm mb-1">Nombre</label>
         <input type="text" id="nombre" name="nombre" required
-               class="w-full p-3 rounded-lg bg-gray-800 text-white border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+               class="w-full p-3 rounded bg-gray-800 text-white border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-300" />
       </div>
       <div>
-        <label for="contacto" class="block text-sm mb-1">Contacto</label>
+        <label for="contacto" class="block text-pixel text-sm mb-1">Contacto</label>
         <input type="text" id="contacto" name="contacto"
-               class="w-full p-3 rounded-lg bg-gray-800 text-white border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+               class="w-full p-3 rounded bg-gray-800 text-white border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-300" />
       </div>
       <button type="submit"
-              class="w-full bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-3 px-4 rounded-lg transition shadow-button">
+              class="boton-balatro text-black font-pixel w-full py-3 text-center">
         Confirmar asistencia
       </button>
     </form>
-
-    <p id="mensaje" class="text-center text-green-400 hidden">¡Gracias por confirmar! 🥳</p>
+  
+    <p id="mensaje" class="text-center text-green-300 text-pixel hidden">¡Gracias por confirmar! 🥳</p>
   </main>
 
   <script src="js/main.js"></script>
