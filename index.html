@@ -4,117 +4,119 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🃏Noche de Póker </title>
-  
+    <title>🃏Noche de Póker</title>
+
     <!-- Tailwind CDN oficial -->
     <script src="https://cdn.tailwindcss.com"></script>
-  
+
     <!-- Fuente pixel -->
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
-  
+
     <!-- Tus estilos -->
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  
-<body class="min-h-screen h-full overflow-y-auto bg-balatro text-white p-4">
-  <main class="z-10 relative max-w-2xl w-full mx-auto bg-black bg-opacity-60 rounded-2xl shadow-2xl p-8 space-y-6 border border-yellow-400 mt-10 mb-10">
-    <h1 class="text-3xl md:text-4xl lg:text-5xl text-yellow-300 text-center font-pixel uppercase">🎲 Noche de Póker</h1>
-  
-    <section class="space-y-2">
-      <p class="text-pixel text-pink-200 text-center">📅 Viernes 19 de Julio - 8:00 PM</p>
-      <p class="text-pixel text-blue-200 text-center">📍 Dirección secreta (Casa de Leo)</p>
-      <p class="text-pixel text-green-300 text-center">💸 Buy-in: $10</p>
-      <p class="text-pixel text-center text-white">🔥 Premios, snacks, traete tu mejor cara de póker. No se permite llorar si pierdes.</p>
-    </section>
-  
-    <form id="formulario" class="space-y-4">
-      <div>
-        <label for="nombre" class="block text-pixel text-sm mb-1">Nombre</label>
-        <input type="text" id="nombre" name="nombre" required
-               class="w-full p-3 rounded bg-gray-800 text-white border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-300" />
-      </div>
-      <div>
-        <label for="contacto" class="block text-pixel text-sm mb-1">Contacto</label>
-        <input type="text" id="contacto" name="contacto"
-               class="w-full p-3 rounded bg-gray-800 text-white border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-300" />
-      </div>
-      <div class="relative group">
-        <button type="submit" class="boton-balatro w-full z-10 relative">
-          Confirmar asistencia
+
+  <body class="min-h-screen h-full overflow-y-auto bg-balatro text-white p-4 font-pixel">
+    <main class="z-10 relative max-w-2xl w-full mx-auto bg-black bg-opacity-60 rounded-2xl shadow-2xl p-8 space-y-6 border border-yellow-400 mt-10 mb-10">
+      <h1 class="text-3xl md:text-4xl lg:text-5xl text-yellow-300 text-center uppercase">🎲 Noche de Póker</h1>
+
+      <section class="space-y-2">
+        <p class="text-pink-200 text-center">📅 Viernes 19 de Julio - 8:00 PM</p>
+        <p class="text-blue-200 text-center">📍 Dirección secreta (Casa de Leo)</p>
+        <p class="text-green-300 text-center">💸 Buy-in: $10</p>
+        <p class="text-white text-center">🔥 Premios, snacks, trae tu mejor cara de póker. No se permite llorar si pierdes.</p>
+      </section>
+
+      <form id="formulario" class="space-y-4">
+        <div>
+          <label for="nombre" class="block text-sm mb-1">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required
+                 class="w-full p-3 rounded bg-gray-800 text-white border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-300" />
+        </div>
+        <div>
+          <label for="contacto" class="block text-sm mb-1">Contacto</label>
+          <input type="text" id="contacto" name="contacto"
+                 class="w-full p-3 rounded bg-gray-800 text-white border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-300" />
+        </div>
+        <div class="relative group">
+          <button type="submit" class="w-full bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-3 px-4 rounded-lg text-pixel shadow-button">
+            Confirmar asistencia
+          </button>
+        </div>
+      </form>
+
+      <form id="form-parqueo" class="space-y-4 mt-8">
+        <h2 class="text-center text-yellow-300 text-xl">🚗 Reserva de Parqueadero</h2>
+        <div>
+          <label for="placa" class="block text-sm mb-1">Placa del vehículo</label>
+          <input type="text" id="placa" name="placa"
+                 class="w-full p-3 rounded bg-gray-800 text-white border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-300" />
+        </div>
+        <div>
+          <label for="vehiculo" class="block text-sm mb-1">Tipo de vehículo</label>
+          <select id="vehiculo" name="vehiculo"
+                  class="w-full p-3 rounded bg-gray-800 text-white border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-300">
+            <option value="auto">Auto</option>
+            <option value="moto">Moto</option>
+            <option value="bicicleta">Bicicleta</option>
+          </select>
+        </div>
+        <button type="submit"
+          class="w-full bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-3 px-4 rounded-lg text-pixel shadow-button mt-4">
+          Confirmar parqueo
         </button>
-        <img src="img/fire.gif" alt="Fuego" class="flama invisible group-hover:visible absolute top-[-40px] left-1/2 -translate-x-1/2 z-20 pointer-events-none" />
-      </div>
-    </form>
-    <form id="form-parqueo" class="space-y-4 mt-8">
-      <h2 class="text-center text-pixel text-yellow-300 text-xl">🚗 Reserva de Parqueadero</h2>
-      <div>
-        <label for="placa" class="block text-pixel text-sm mb-1">Placa del vehículo</label>
-        <input type="text" id="placa" name="placa"
-               class="w-full p-3 rounded bg-gray-800 text-white border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-300" />
-      </div>
-      <div>
-        <label for="vehiculo" class="block text-pixel text-sm mb-1">Tipo de vehículo</label>
-        <select id="vehiculo" name="vehiculo"
-                class="w-full p-3 rounded bg-gray-800 text-white border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-300">
-          <option value="auto">Auto</option>
-          <option value="moto">Moto</option>
-          <option value="bicicleta">Bicicleta</option>
-        </select>
-      </div>
-      <button type="submit"
-        class="w-full bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-3 px-4 rounded-lg text-pixel shadow-button mt-4">
-        Confirmar parqueo
-      </button>
-    </form>
-  
-    <p id="mensaje" class="text-center text-green-300 text-pixel hidden">¡Gracias por confirmar! 🥳</p>
-  </main>
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
-    import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
-  
-    const firebaseConfig = {
-      apiKey: "AIzaSyAUxAFr7MnsFIuV4IPsaqL1zm888axc74o",
-      authDomain: "pokernight-b9512.firebaseapp.com",
-      projectId: "pokernight-b9512",
-      storageBucket: "pokernight-b9512.appspot.com", 
-      messagingSenderId: "662098273299",
-      appId: "1:662098273299:web:55a1081645826d81d2cbe6",
-      measurementId: "G-HF6LP2M0C1",
-      databaseURL: "https://pokernight-b9512-default-rtdb.firebaseio.com"
-    };
-  
-    const app = initializeApp(firebaseConfig);
-    const db = getDatabase(app);
-  
-    // Guarda asistencia
-    document.getElementById("formulario").addEventListener("submit", (e) => {
-      e.preventDefault();
-      const nombre = document.getElementById("nombre").value;
-      const contacto = document.getElementById("contacto").value;
-      if (!nombre) return;
-  
-      push(ref(db, "asistentes/"), { nombre, contacto })
-        .then(() => {
-          document.getElementById("mensaje").classList.remove("hidden");
-          e.target.reset();
-        });
-    });
-  
-    // Guarda parqueadero
-    document.getElementById("form-parqueo").addEventListener("submit", (e) => {
-      e.preventDefault();
-      const placa = document.getElementById("placa").value;
-      const vehiculo = document.getElementById("vehiculo").value;
-      if (!placa || !vehiculo) return;
-  
-      push(ref(db, "parqueadero/"), { placa, vehiculo })
-        .then(() => {
-          alert("Reserva de parqueadero confirmada 🚗");
-          e.target.reset();
-        });
-    });
-  </script>
-  <script src="js/main.js"></script>
-</body>
+      </form>
+
+      <p id="mensaje" class="text-center text-green-300 text-pixel hidden">¡Gracias por confirmar! 🥳</p>
+    </main>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+      import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyAUxAFr7MnsFIuV4IPsaqL1zm888axc74o",
+        authDomain: "pokernight-b9512.firebaseapp.com",
+        projectId: "pokernight-b9512",
+        storageBucket: "pokernight-b9512.appspot.com",
+        messagingSenderId: "662098273299",
+        appId: "1:662098273299:web:55a1081645826d81d2cbe6",
+        measurementId: "G-HF6LP2M0C1",
+        databaseURL: "https://pokernight-b9512-default-rtdb.firebaseio.com"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
+
+      // Asistencia
+      document.getElementById("formulario").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const nombre = document.getElementById("nombre").value.trim();
+        const contacto = document.getElementById("contacto").value.trim();
+        if (!nombre) return;
+
+        push(ref(db, "asistentes/"), { nombre, contacto })
+          .then(() => {
+            document.getElementById("mensaje").classList.remove("hidden");
+            e.target.reset();
+          });
+      });
+
+      // Parqueadero
+      document.getElementById("form-parqueo").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const placa = document.getElementById("placa").value.trim();
+        const vehiculo = document.getElementById("vehiculo").value;
+        if (!placa || !vehiculo) return;
+
+        push(ref(db, "parqueadero/"), { placa, vehiculo })
+          .then(() => {
+            alert("Reserva de parqueadero confirmada 🚗");
+            e.target.reset();
+          });
+      });
+    </script>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>
