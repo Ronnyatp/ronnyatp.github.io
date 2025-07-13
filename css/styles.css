@@ -1,0 +1,17 @@
+body {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1 {
+    font-family: 'Cinzel', serif;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  

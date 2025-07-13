@@ -4,32 +4,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Noche de Póker 🃏</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter&display=swap" rel="stylesheet" />
 </head>
-<body class="bg-gray-900 text-white font-sans min-h-screen flex items-center justify-center p-6">
-  <div class="max-w-xl w-full bg-gray-800 rounded-xl shadow-lg p-8 space-y-6">
-    <h1 class="text-4xl font-bold text-yellow-400 text-center">Noche de Póker 🃏</h1>
-    <p class="text-center text-gray-300">Viernes 19 de Julio - 8:00 PM</p>
-    <p class="text-center text-gray-400">Ubicación secreta. Buy-in $10. Trae tu bebida y tu mejor bluff.</p>
+<body class="bg-black text-white font-sans min-h-screen flex items-center justify-center p-6">
+  <div class="max-w-2xl w-full bg-gray-800 bg-opacity-90 rounded-2xl shadow-2xl p-10 space-y-8">
+    <h1 class="text-5xl text-yellow-400 text-center font-title">Noche de Póker 🃏</h1>
+    <p class="text-center text-gray-300 text-lg">📅 Viernes 19 de Julio - 8:00 PM</p>
+    <p class="text-center text-gray-400 text-base">📍 Dirección secreta (te la paso por WhatsApp)</p>
+    <p class="text-center text-gray-400 text-base">💸 Buy-in: $10</p>
 
     <form id="formulario" class="space-y-4">
       <div>
-        <label for="nombre" class="block text-sm">Nombre</label>
+        <label for="nombre" class="block text-sm mb-1">Nombre</label>
         <input type="text" id="nombre" name="nombre" required
-               class="w-full p-2 rounded bg-gray-700 text-white focus:outline-none focus:ring focus:ring-yellow-500" />
+               class="w-full p-3 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500" />
       </div>
       <div>
-        <label for="contacto" class="block text-sm">Contacto (WhatsApp, Discord...)</label>
+        <label for="contacto" class="block text-sm mb-1">Contacto</label>
         <input type="text" id="contacto" name="contacto"
-               class="w-full p-2 rounded bg-gray-700 text-white focus:outline-none focus:ring focus:ring-yellow-500" />
+               class="w-full p-3 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500" />
       </div>
       <button type="submit"
-              class="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-2 px-4 rounded transition">
+              class="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 px-4 rounded-lg transition">
         Confirmar asistencia
       </button>
     </form>
 
     <p id="mensaje" class="text-center text-green-400 hidden">¡Gracias por confirmar! 🥳</p>
   </div>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
