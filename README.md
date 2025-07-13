@@ -1,2 +1,2 @@
-# ronnyatp..github.io
+# ronnyatp.github.io
 Repo de Pagina Poker
