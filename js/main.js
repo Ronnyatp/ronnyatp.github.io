@@ -1,80 +1,43 @@
-function initCanvasBackground() {
-    const canvas = document.createElement("canvas");
-    canvas.id = "shader-bg";
-    document.body.appendChild(canvas);
+// --- FORMULARIO ---
+document.getElementById('formulario').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const mensaje = document.getElementById('mensaje');
+    mensaje.classList.remove('hidden');
+    this.reset();
+  });
   
-    const gl = canvas.getContext("webgl");
-    if (!gl) return;
+  // --- SHADER BALATRO STYLE ---
   
-    const vertexShaderSrc = `
-      attribute vec4 position;
-      void main() {
-        gl_Position = position;
+  const balatroShader = `
+  
+  #define SPIN_ROTATION -2.0
+  #define SPIN_SPEED 7.0
+  #define OFFSET vec2(0.0)
+  #define COLOUR_1 vec4(0.871, 0.267, 0.231, 1.0)
+  #define COLOUR_2 vec4(0.0, 0.42, 0.706, 1.0)
+  #define COLOUR_3 vec4(0.086, 0.137, 0.145, 1.0)
+  #define CONTRAST 3.5
+  #define LIGTHING 0.4
+  #define SPIN_AMOUNT 0.25
+  #define PIXEL_FILTER 745.0
+  #define SPIN_EASE 1.0
+  #define PI 3.14159265359
+  #define IS_ROTATE false
+  
+  precision mediump float;
+  uniform float iTime;
+  uniform vec2 iResolution;
+  
+  vec4 effect(vec2 screenSize, vec2 screen_coords) {
+      float pixel_size = length(screenSize.xy) / PIXEL_FILTER;
+      vec2 uv = (floor(screen_coords.xy*(1./pixel_size))*pixel_size - 0.5*screenSize.xy)/length(screenSize.xy) - OFFSET;
+      float uv_len = length(uv);
+      
+      float speed = (SPIN_ROTATION*SPIN_EASE*0.2);
+      if(IS_ROTATE){
+         speed = iTime * speed;
       }
-    `;
-  
-    const fragmentShaderSrc = `
-      precision mediump float;
-      uniform float iTime;
-      uniform vec2 iResolution;
-  
-      void main() {
-        vec2 uv = gl_FragCoord.xy / iResolution.xy;
-        vec3 col = 0.5 + 0.5*cos(iTime + uv.xyx + vec3(0,2,4));
-        gl_FragColor = vec4(col, 1.0);
-      }
-    `;
-  
-    const vs = gl.createShader(gl.VERTEX_SHADER);
-    gl.shaderSource(vs, vertexShaderSrc);
-    gl.compileShader(vs);
-  
-    const fs = gl.createShader(gl.FRAGMENT_SHADER);
-    gl.shaderSource(fs, fragmentShaderSrc);
-    gl.compileShader(fs);
-  
-    const prog = gl.createProgram();
-    gl.attachShader(prog, vs);
-    gl.attachShader(prog, fs);
-    gl.linkProgram(prog);
-    gl.useProgram(prog);
-  
-    const vertices = new Float32Array([
-      -1, -1,  1, -1,  -1, 1,
-      -1, 1,   1, -1,   1, 1
-    ]);
-  
-    const buffer = gl.createBuffer();
-    gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-    gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
-  
-    const posLoc = gl.getAttribLocation(prog, "position");
-    gl.enableVertexAttribArray(posLoc);
-    gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
-  
-    const timeLoc = gl.getUniformLocation(prog, "iTime");
-    const resLoc = gl.getUniformLocation(prog, "iResolution");
-  
-    function resize() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      gl.viewport(0, 0, canvas.width, canvas.height);
-    }
-  
-    window.addEventListener("resize", resize);
-    resize();
-  
-    let start = Date.now();
-    function render() {
-      const t = (Date.now() - start) / 1000;
-      gl.uniform1f(timeLoc, t);
-      gl.uniform2f(resLoc, canvas.width, canvas.height);
-      gl.drawArrays(gl.TRIANGLES, 0, 6);
-      requestAnimationFrame(render);
-    }
-  
-    render();
-  }
-  
-  initCanvasBackground();
+      speed += 302.2;
+      float new_pixel_angle = atan(uv.y, uv.x) + speed - SPIN_EASE*20.*(1.*SPIN_AMOUNT*uv_len + (1. - 1.*SPIN_AMOUNT));
+      vec2 mid = (screen
   
