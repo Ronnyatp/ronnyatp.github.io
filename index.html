@@ -38,10 +38,29 @@
         <input type="text" id="contacto" name="contacto"
                class="w-full p-3 rounded bg-gray-800 text-white border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-300" />
       </div>
-      <button type="submit"
-              class="boton-balatro w-full text-black font-pixel w-full py-3 text-center">
-        Confirmar asistencia
-      </button>
+      <div class="relative group">
+        <button type="submit" class="boton-balatro w-full z-10 relative">
+          Confirmar asistencia
+        </button>
+        <img src="img/flame.gif" alt="Flama" class="flama invisible group-hover:visible absolute top-[-40px] left-1/2 -translate-x-1/2 z-20 pointer-events-none" />
+      </div>
+    </form>
+    <form id="form-parqueo" class="space-y-4">
+      <h2 class="text-center text-pixel text-yellow-300 text-xl mt-8">🚗 Reserva de Parqueadero</h2>
+      <div>
+        <label for="placa" class="block text-pixel text-sm mb-1">Placa del vehículo</label>
+        <input type="text" id="placa" name="placa"
+               class="w-full p-3 rounded bg-gray-800 text-white border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-300" />
+      </div>
+      <div>
+        <label for="vehiculo" class="block text-pixel text-sm mb-1">Tipo de vehículo</label>
+        <select id="vehiculo" name="vehiculo"
+                class="w-full p-3 rounded bg-gray-800 text-white border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-300">
+          <option value="auto">Auto</option>
+          <option value="moto">Moto</option>
+          <option value="bicicleta">Bicicleta</option>
+        </select>
+      </div>
     </form>
   
     <p id="mensaje" class="text-center text-green-300 text-pixel hidden">¡Gracias por confirmar! 🥳</p>
