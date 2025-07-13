@@ -43,9 +43,9 @@ canvas#shader-bg {
     transition: all 0.2s ease;
   }
   
-  /* 🔥 Activa las llamas en hover */
   .boton-balatro:hover {
-    animation: flame-glow 1.2s infinite ease-in-out;
+    transform: translateY(-2px);
+    box-shadow: 0 0 16px #ffd700, 0 0 32px #ff4500;
   }
 
   .flama {
