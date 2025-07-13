@@ -19,18 +19,31 @@ canvas#shader-bg {
   display: block;
 }
 
-/* Estilo botón Balatro */
-.boton-balatro {
-  background: #ffd84d;
-  border: 4px solid black;
-  box-shadow: 0 4px 0 #000, 0 6px 8px rgba(0,0,0,0.6);
-  transition: all 0.1s ease-in-out;
-  font-size: 14px;
-  letter-spacing: 1px;
-}
-
-.boton-balatro:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 0 #000, 0 10px 12px rgba(0,0,0,0.7);
-  background: #fff276;
-}
+@keyframes flame-glow {
+    0%, 100% {
+      box-shadow: 0 0 8px #ffb347, 0 0 18px #ff6347, 0 0 24px #ff4500;
+      transform: translateY(0);
+    }
+    50% {
+      box-shadow: 0 0 12px #ffd700, 0 0 24px #ff6347, 0 0 32px #ff4500;
+      transform: translateY(-1px);
+    }
+  }
+  
+  .boton-balatro {
+    background: #ffcc00;
+    border: 4px solid #000;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 14px;
+    color: black;
+    padding: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  /* 🔥 Activa las llamas en hover */
+  .boton-balatro:hover {
+    animation: flame-glow 1.2s infinite ease-in-out;
+  }
